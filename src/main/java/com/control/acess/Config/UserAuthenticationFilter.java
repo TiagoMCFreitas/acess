@@ -51,10 +51,7 @@ public class UserAuthenticationFilter extends OncePerRequestFilter {
 
     // Recupera o token do cabeçalho Authorization da requisição
     private String recoveryToken(HttpServletRequest request) {
-        String authorizationHeader = request.getHeader("Authorization");
-        System.out.println(authorizationHeader);
-        System.out.println(request.getHeader("Authorization"));
-        System.out.println(request.getHeader("authorization"));
+        String authorizationHeader = request.getHeader("authorization");
 
         if (authorizationHeader != null) {
             return authorizationHeader.replace("Bearer ", "");
