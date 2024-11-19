@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/usuario")
 public class UsuarioController {
@@ -40,4 +42,12 @@ public class UsuarioController {
             return usuarioService.getProfile();
         }
 
+        @GetMapping("/lista")
+        public List<Usuario> getLista() {
+        return usuarioService.getAll();
+        }
+        @PutMapping("/alterar")
+        public Usuario alterarUsuario(@RequestBody Usuario usuario) {
+        return usuarioService.alterar(usuario);
+        }
 }

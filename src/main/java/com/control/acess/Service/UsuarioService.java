@@ -15,6 +15,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UsuarioService {
 
@@ -62,4 +64,13 @@ public class UsuarioService {
 
         // Salva o novo usuário no banco de dados
         userRepository.save(usuario);
-}}
+}
+    public List<Usuario> getAll(){
+        return userRepository.findAll();
+    }
+    public Usuario alterar(Usuario usuario){
+        return userRepository.save(usuario);
+    }
+}
+
+

@@ -27,16 +27,20 @@ public class SecurityConfiguration {
     };
 
     public static final String[] ENPOINTS_USUARIO ={
-            "/api/usuario/profile"
+            "/api/usuario/profile",
+
     };
     // Endpoints que só podem ser acessador por usuários com permissão de cliente
     public static final String [] ENDPOINTS_GERENTE = {
-            "/api/usuario/profile"
+            "/api/usuario/profile",
+            "/api/usuario/lista"
     };
 
     // Endpoints que só podem ser acessador por usuários com permissão de administrador
     public static final String [] ENDPOINTS_ADMIN = {
-            "/api/usuario/profile"
+            "/api/usuario/profile",
+            "/api/usuario/lista",
+            "/api/usuario/alterar"
     };
 
     @Bean
